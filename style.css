@@ -1,0 +1,459 @@
+/* 1. CSS VARIABLES (Colors from Logo) */
+:root {
+    /* Primary brand colors */
+    --color-primary-blue: #0A3742; /* Dark, professional blue */
+    --color-primary-green: #007B4F; /* Deep brand green */
+    /* Neutral colors */
+    --color-light: #f4f4f4;
+    --color-dark: #333;
+    --color-white: #ffffff;
+    
+    /* Font families */
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* 2. BASE STYLES & RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    background: var(--color-white);
+    color: var(--color-dark);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary-green);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+.section-dark {
+    background: var(--color-primary-blue);
+    color: var(--color-light);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: inherit; /* Inherits from the section color */
+}
+
+/* 3. HEADER & NAV STYLES */
+#main-header {
+    background: var(--color-primary-blue);
+    color: var(--color-white);
+    padding: 15px 0;
+    position: sticky; /* Keeps the nav bar visible on scroll */
+    top: 0;
+    z-index: 100;
+}
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+#navbar ul {
+    display: flex;
+}
+
+#navbar ul li a {
+    color: var(--color-white);
+    padding: 10px 15px;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+#navbar ul li a:hover, #navbar ul li a.current {
+    background: var(--color-primary-green);
+}
+
+/* 4. HERO SECTION STYLES */
+.hero {
+    background: url('kentcontactors1.jpg') no-repeat center center/cover; /* Placeholder background */
+    height: 70vh; /* Viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    position: relative;
+}
+
+/* Dark overlay for better text readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    padding: 20px;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+
+/* 5. BUTTON STYLES */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--color-primary-green);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background: #004d33; /* Darker green on hover */
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--color-primary-green);
+    color: var(--color-primary-green);
+    margin-top: 1.5rem;
+}
+/* For dark sections, reverse colors */
+.section-dark .btn-secondary {
+    border-color: var(--color-light);
+    color: var(--color-light);
+}
+
+/* 6. FOOTER STYLES */
+footer {
+    background: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+
+/* --- New CSS for the About Page Layout --- */
+
+.page-header {
+    padding: 100px 0 60px 0; /* Add extra padding for pages below the sticky header */
+}
+
+.page-title {
+    text-align: left;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Two columns: 2/3 text, 1/3 image */
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text h3 {
+    color: var(--color-primary-green);
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.about-image {
+    background: var(--color-light); /* Placeholder background for image */
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-dark);
+    font-weight: 700;
+    text-align: center;
+}
+
+/* --- PROJECTS GALLERY STYLES --- */
+
+.project-grid-gallery {
+    display: grid;
+    /* Create a responsive 3-column layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-item {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    background: var(--color-dark);
+    cursor: pointer;
+}
+
+.project-img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--color-light); /* Placeholder for actual image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-dark);
+    font-weight: 700;
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--color-white);
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+.project-item:hover .project-overlay {
+    transform: translateY(0);
+}
+
+.project-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+.project-overlay p {
+    color: var(--color-primary-green);
+}
+
+/* --- CONTACT PAGE STYLES --- */
+
+.contact-flex {
+    display: flex;
+    gap: 40px;
+}
+
+.contact-form-area, .contact-details {
+    flex: 1; /* Both take equal space */
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.contact-details h2 {
+    color: var(--color-primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.detail-box {
+    margin-top: 25px;
+}
+
+.detail-box h3 {
+    color: var(--color-primary-green);
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Add icons style (requires Font Awesome library link in the HTML <head>) */
+.detail-box i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* --- MEDIA QUERIES (For basic responsiveness) --- */
+@media(max-width: 768px) {
+    .contact-flex {
+        flex-direction: column; /* Stacks contact sections vertically on small screens */
+    }
+}
+
+/* --- SLIDER CSS (Fading Animation) --- */
+
+/* Parent container for positioning slides */
+.slider-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Default state: hidden */
+    transition: opacity 1.5s ease-in-out; /* Smooth transition */
+}
+
+.slide.active {
+    opacity: 1; /* Only visible when active class is added by JS */
+}
+
+/* Placeholder backgrounds for the slides */
+.slide-1 {
+    background: linear-gradient(rgba(10, 55, 66, 0.7), rgba(10, 55, 66, 0.7)), url('');
+    background-size: cover;
+}
+.slide-2 {
+    background: linear-gradient(rgba(0, 123, 79, 0.6), rgba(0, 123, 79, 0.6)), url('');
+    background-size: cover;
+}
+.slide-3 {
+    background: linear-gradient(rgba(10, 55, 66, 0.7), rgba(10, 55, 66, 0.7)), url('');
+    background-size: cover;
+}
+
+.hero-content {
+    /* Ensures content is centered and above the fade effect */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 90%;
+    max-width: 800px;
+}
+
+
+/* --- MOBILE OPTIMIZATION (Media Queries) --- */
+
+@media(max-width: 768px) {
+    /* Navigation */
+    #main-header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #navbar ul {
+        flex-direction: column; /* Stack navigation links vertically */
+        padding: 10px 0;
+    }
+
+    /* Grid Layouts (About and Projects) */
+    .about-grid, .project-grid-gallery, .contact-flex {
+        grid-template-columns: 1fr; /* Stack columns into a single column */
+        flex-direction: column;
+    }
+    
+    .about-image {
+        order: -1; /* Place image above text on mobile */
+        min-height: 250px;
+    }
+
+    /* Text Sizes */
+    .hero-content h2 {
+        font-size: 2.5rem; 
+    }
+    
+    .section-title, .page-title {
+        font-size: 2rem;
+    }
+}
+
+
+/* --- SERVICES PAGE STYLES --- */
+
+.service-grid {
+    display: grid;
+    /* Create 3 columns for desktop, responsive down to 1 column */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: var(--color-light);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h3 {
+    color: var(--color-primary-blue);
+    margin: 10px 0;
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: var(--color-primary-green);
+    margin-bottom: 10px;
+    /* Note: These icons require a link to the Font Awesome library in the <head> tag of services.html */
+}

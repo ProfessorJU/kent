@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Kent Contractors LTD</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header id="main-header">
+        <div class="container">
+            <div class="logo"><h1>KENT CONTRACTORS LTD</h1></div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html" class="current">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header section-dark">
+        <div class="container">
+            <h1 class="page-title">LET'S START BUILDING</h1>
+            <p>Get in touch with our team for a consultation on your next project.</p>
+        </div>
+    </section>
+
+    <section id="contact-content" class="section-padding">
+        <div class="container contact-flex">
+            <div class="contact-form-area">
+                <h2>Send Us an Inquiry</h2>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service">
+                            <option value="construction">Construction</option>
+                            <option value="renovation">Renovation</option>
+                            <option value="mep">MEP Services</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Project Details</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+            
+            <div class="contact-details">
+                <h2>Our Details</h2>
+                <p>We look forward to hearing about your project vision.</p>
+                <div class="detail-box">
+                    <h3><i class="fas fa-phone"></i> Phone</h3>
+                    <p>+250788491362</p>
+                </div>
+                <div class="detail-box">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p>kentcontractorsrwanda@gmail.com</p>
+                </div>
+                <div class="detail-box">
+                    <h3><i class="fab fa-facebook-square"></i> Social</h3>
+                    <p>@KentContractors (on Facebook, Instagram, etc.)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Kent Contractors LTD. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
